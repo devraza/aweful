@@ -1,5 +1,5 @@
 local awful = require("awful")
-local lain = require("modules.lain")
+local lain = require("lain")
 
 battery =
     lain.widget.bat {

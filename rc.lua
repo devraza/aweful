@@ -8,7 +8,7 @@ require("awful.autofocus")
 -- AwesomeWM modules
 local gears = require("gears")
 local beautiful = require("beautiful")
-local lain = require("modules.lain")
+local lain = require("lain")
 local naughty = require("naughty")
 local dpi = require("beautiful.xresources").apply_dpi
 
