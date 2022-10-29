@@ -1,2 +1,2 @@
-require('keymaps.mouse')
-require('keymaps.keyboard')
+require("keymaps.mouse")
+require("keymaps.keyboard")

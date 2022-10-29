@@ -1,5 +1,5 @@
-local awful = require('awful')
-local gears = require('gears')
+local awful = require("awful")
+local gears = require("gears")
 
 --- Autostart ---
-awful.spawn.with_shell(gears.filesystem.get_configuration_dir() .. 'utilities/autostart/startup.sh')
+awful.spawn.with_shell(gears.filesystem.get_configuration_dir() .. "utilities/autostart/startup.sh")

@@ -1,18 +1,18 @@
 -- Utilities --
 -- Helper functions
-require('utilities.helpers')
+require("utilities.helpers")
 
 -- Client rules
-require('utilities.rules')
+require("utilities.rules")
 
 -- Autostart apps
-require('utilities.autostart')
+require("utilities.autostart")
 
 -- Layouts
-require('utilities.layouts')
+require("utilities.layouts")
 
 -- Bling, utilities for AwesomeWM
-require('utilities.bling')
+require("utilities.bling")
 
 -- Sloppy focus
-require('utilities.focus')
+require("utilities.focus")
