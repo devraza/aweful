@@ -17,7 +17,7 @@ This repository contains my AwesomeWM configuration, made with lots of **Love**.
 
 > Please keep in mind that all of these are optional for the configuration to load, but necessary if you want some functionality (for example, `scrot` is required for screenshots)
 
-> A working `.Xresources` with colour configuration and appropriately placed is also essential.
+> An appropriately placed `.Xresources` with colour configuration is also essential.
 
 #### Fonts
 
