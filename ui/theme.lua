@@ -43,7 +43,7 @@ theme.fg_focus = theme.bg_normal
 theme.fg_urgent = theme.bg_normal
 theme.fg_minimize = theme.bg_normal
 
-theme.useless_gap = dpi(6)
+theme.useless_gap = dpi(8)
 theme.border_width = dpi(0)
 
 theme.tooltip_fg = theme.fg_normal
