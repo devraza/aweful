@@ -1,11 +1,11 @@
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
-function colourise(txt, fg)
+function colourise(text, fg)
     if fg == "" then
         fg = beautiful.primary
     end
-    return " <span foreground='" .. fg .. "'>" .. txt .. "</span>"
+    return " <span foreground='" .. fg .. "'>" .. text .. "</span>"
 end
 
 function icon_colourise(colour, code)
@@ -21,7 +21,7 @@ end
 function icon(code)
     return wibox.widget {
         font = beautiful.icon_font,
-        markup = ' <span color="' .. primary .. '">' .. code .. "</span>",
+        markup = ' <span color="' .. beautiful.primary .. '">' .. code .. "</span>",
         align = "center",
         valign = "center",
         widget = wibox.widget.textbox
@@ -42,7 +42,18 @@ end
 function distext(text)
     return wibox.widget {
         font = beautiful.font,
-        markup = '<span color="' .. "#4e5173" .. '">' .. text .. "</span>",
+        markup = '<span color="' .. beautiful.disabled .. '">' .. text .. "</span>",
         widget = wibox.widget.textbox
+    }
+end
+
+function notify(title, description)
+    return naughty.notification {
+        border_color = beautiful.bg_normal,
+        border_width = 10,
+        fg = text,
+        bg = beautiful.bg_normal,
+        title = '<span color="' .. beautiful.tertiary .. '"><b>' .. title .. "</b></span>",
+        text = description
     }
 end

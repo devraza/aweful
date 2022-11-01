@@ -1,4 +1,6 @@
--- Utilities --
+-- Notifications loaded first for errors
+require("utilities.notifications")
+
 -- Helper functions
 require("utilities.helpers")
 

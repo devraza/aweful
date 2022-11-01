@@ -9,20 +9,7 @@ require("awful.autofocus")
 local gears = require("gears")
 local beautiful = require("beautiful")
 local lain = require("lain")
-local naughty = require("naughty")
 local dpi = require("beautiful.xresources").apply_dpi
-
--- Notificaton on errors
-naughty.connect_signal(
-    "request::display_error",
-    function(message, startup)
-        naughty.notification {
-            urgency = "critical",
-            title = "An error occured" .. (startup and " during startup"),
-            message = message
-        }
-    end
-)
 
 -- Initialize theme
 beautiful.init(gears.filesystem.get_configuration_dir() .. "ui/theme.lua")
@@ -33,12 +20,12 @@ local mpd =
     timeout = 0.2,
     settings = function()
         mpd_notification_preset = {
-            bg = "#11111b",
-            border_color = "#11111b",
+            bg = beautiful.bg_normal,
+            border_color = beautiful.bg_normal,
             border_width = dpi(10),
             timeout = 1,
-            fg = text,
-            title = '<span color="' .. tertiary .. '"><b>' .. "Now playing" .. "</b></span>",
+            fg = beautiful.text,
+            title = '<span color="' .. beautiful.tertiary .. '"><b>' .. "Now playing" .. "</b></span>",
             text = mpd_now.title .. " - " .. mpd_now.artist
         }
     end

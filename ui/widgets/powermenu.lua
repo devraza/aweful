@@ -6,7 +6,7 @@ local naughty = require("naughty")
 powermenu =
     wibox.widget {
     font = beautiful.icon_font,
-    markup = '<span color="' .. secondary .. '"> \u{f011}</span>',
+    markup = '<span color="' .. beautiful.negative .. '"> \u{f011}</span>',
     align = "center",
     valign = "center",
     halign = "center",

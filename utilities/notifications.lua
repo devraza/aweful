@@ -1,6 +1,19 @@
 local ruled = require("ruled")
 local awful = require("awful")
 local naughty = require("naughty")
+local beautiful = require("beautiful")
+
+-- Notificaton on errors
+naughty.connect_signal(
+    "request::display_error",
+    function(message, startup)
+        naughty.notification {
+            urgency = "critical",
+            title = "An error occured" .. (startup and " during startup"),
+            message = message
+        }
+    end
+)
 
 ruled.notification.connect_signal(
     "request::rules",
@@ -22,14 +35,3 @@ naughty.connect_signal(
         naughty.layout.box {notification = n}
     end
 )
-
-function notify(title, description)
-    return naughty.notification {
-        border_color = "#11111b",
-        border_width = 10,
-        fg = text,
-        bg = "#11111b",
-        title = '<span color="' .. tertiary .. '"><b>' .. title .. "</b></span>",
-        text = description
-    }
-end
