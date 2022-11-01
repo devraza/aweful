@@ -7,6 +7,7 @@ run() {
 }
 
 emacs --daemon &
+
 run pipewire
 run pipewire-pulse
 run picom

@@ -5,8 +5,8 @@ require("ui.wallpaper")
 -- Load widgets
 require("ui.widgets")
 
--- Load panels
-require("ui.panels.top_bar")
+-- Load panel
+require("ui.panel")
 
 -- Notifications
 require("ui.notifications")

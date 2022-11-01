@@ -1,4 +1,5 @@
-require("ui.widgets.widget.clock")
-require("ui.widgets.widget.battery")
-require("ui.widgets.widget.powermenu")
-require("ui.widgets.widget.volume")
+-- Load all the widgets
+require("ui.widgets.clock")
+require("ui.widgets.battery")
+require("ui.widgets.powermenu")
+require("ui.widgets.volume")
