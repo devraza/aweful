@@ -1,5 +1,6 @@
 local ruled = require("ruled")
 local awful = require("awful")
+local lain = require("lain")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
 
@@ -35,3 +36,20 @@ naughty.connect_signal(
         naughty.layout.box {notification = n}
     end
 )
+
+-- MPD Notifications
+local mpd =
+    lain.widget.mpd {
+    timeout = 0.2,
+    settings = function()
+        mpd_notification_preset = {
+            bg = beautiful.bg_normal,
+            border_color = beautiful.bg_normal,
+            border_width = dpi(10),
+            timeout = 1,
+            fg = beautiful.text,
+            title = '<span color="' .. beautiful.tertiary .. '"><b>' .. "Now playing" .. "</b></span>",
+            text = mpd_now.title .. " - " .. mpd_now.artist
+        }
+    end
+}
