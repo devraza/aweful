@@ -20,7 +20,7 @@ screen.connect_signal(
         local layoutbox =
             awful.widget.layoutbox {
             screen = s,
-            forced_height = dpi(21),
+            forced_height = dpi(20),
             -- Add buttons, allowing you to change the layout
             buttons = {
                 awful.button(
@@ -146,6 +146,7 @@ screen.connect_signal(
         s.top_panel =
             awful.wibar {
             position = "left",
+            width = dpi(34),
             forced_height = dpi(20),
             screen = s,
             widget = {
