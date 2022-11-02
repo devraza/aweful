@@ -127,9 +127,9 @@ awful.keyboard.append_global_keybindings(
             {modkey, "Control"},
             "l",
             function()
-                awful.spawn("pamixer --set-volume 0")
+                awful.spawn("pamixer -t")
             end,
-            {description = "Volume 0%", group = "Volume"}
+            {description = "Toggle mute", group = "Volume"}
         )
     }
 )
