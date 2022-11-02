@@ -19,7 +19,7 @@ battery =
             border_width = 15,
             bg = beautiful.bg_normal,
             timeout = 5,
-            title = '<span color="' .. beautiful.secondary .. '"><b>Battery low!</b></span>',
+            title = '<span color="' .. beautiful.negative .. '"><b>Battery low!</b></span>',
             text = "Plug in the cable."
         }
         bat_notification_critical_preset = {
@@ -27,7 +27,7 @@ battery =
             border_width = 15,
             timeout = 5,
             bg = beautiful.bg_normal,
-            title = '<span color="' .. beautiful.secondary .. '"><b>Battery critical!</b></span>',
+            title = '<span color="' .. beautiful.negative .. '"><b>Battery critical!</b></span>',
             text = "Impending doom approaches!."
         }
     end,
