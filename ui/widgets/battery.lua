@@ -33,5 +33,3 @@ battery =
     end,
     batteries = {"BAT1", "BAT2"}
 }
-
-battery_icon = icon("\u{f240}")
