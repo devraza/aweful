@@ -161,7 +161,7 @@ screen.connect_signal(
                     -- Bottom widgets
                     layout = wibox.layout.fixed.vertical,
                     wibox.container.place(battery),
-                    wibox.container.place(volume),
+                    wibox.container.margin(wibox.container.place(volume), 0, 0, 0, dpi(20)),
                     wibox.container.margin(wibox.container.place(layoutbox), 0, 0, 0, dpi(20)),
                     wibox.container.place(clock),
                     wibox.container.margin(wibox.container.place(powermenu), dpi(-4), 0, dpi(15), dpi(15))
