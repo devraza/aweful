@@ -1,6 +1,7 @@
 local awful = require("awful")
 local lain = require("lain")
 local beautiful = require("beautiful")
+local dpi = beautiful.xresources.apply_dpi
 
 battery =
     lain.widget.bat {
