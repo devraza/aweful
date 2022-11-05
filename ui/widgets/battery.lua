@@ -8,7 +8,7 @@ battery =
         widget:set_markup('<span color="' .. beautiful.primary .. '"><b>' .. bat_now.perc .. "</b></span>")
         bat_notification_charged_preset = {
             border_color = beautiful.bg_normal,
-            border_width = 15,
+            border_width = dpi(10),
             bg = beautiful.bg_normal,
             timeout = 5,
             title = '<span color="' .. beautiful.positive .. '"><b>Battery full charged!</b></span>',
@@ -16,7 +16,7 @@ battery =
         }
         bat_notification_low_preset = {
             border_color = beautiful.bg_normal,
-            border_width = 15,
+            border_width = dpi(10),
             bg = beautiful.bg_normal,
             timeout = 5,
             title = '<span color="' .. beautiful.negative .. '"><b>Battery low!</b></span>',
@@ -24,7 +24,7 @@ battery =
         }
         bat_notification_critical_preset = {
             border_color = beautiful.bg_normal,
-            border_width = 15,
+            border_width = dpi(10),
             timeout = 5,
             bg = beautiful.bg_normal,
             title = '<span color="' .. beautiful.negative .. '"><b>Battery critical!</b></span>',
