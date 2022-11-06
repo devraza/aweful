@@ -64,9 +64,9 @@ theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus
 
 -- Taglist colours
 theme.taglist_fg_focus = theme.negative
-theme.taglist_bg_urgent = theme.negative
 theme.taglist_bg_focus = "#00000000"
-theme.taglist_bg_urgent = "#00000000"
+theme.taglist_fg_urgent = "#00000000"
+theme.taglist_bg_urgent = theme.negative
 
 -- Disable taglist squares:
 local taglist_square_size = dpi(0)
