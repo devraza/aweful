@@ -15,8 +15,9 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "ui/theme.lua")
 
 -- Variables --
 
+-- Terminal emulator
 terminal = "alacritty"
--- This command will be run directly
+-- Editor. This will be run directly
 editor = "emacsclient -c"
 -- Modkey. Can either be Mod4 (Super) or Mod1 (Alt)
 modkey = "Mod4"
@@ -30,6 +31,8 @@ browser = "qutebrowser"
 monitor = terminal .. " -e btm"
 -- Chat client
 chat = terminal .. " -e tiny"
+-- PDF Viewer
+pdf = "zathura"
 
 -- User modules
 require("utilities")

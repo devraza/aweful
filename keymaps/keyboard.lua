@@ -215,6 +215,14 @@ awful.keyboard.append_global_keybindings(
         ),
         awful.key(
             {modkey},
+            "x",
+            function()
+                awful.spawn.with_shell(pdf)
+            end,
+            {description = "PDF Viewer", group = "Applications"}
+        ),
+        awful.key(
+            {modkey},
             "z",
             function()
                 awful.spawn(music_player)
