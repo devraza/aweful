@@ -6,7 +6,7 @@ local dpi = beautiful.xresources.apply_dpi
 battery =
     lain.widget.bat {
     settings = function()
-        widget:set_markup('<span color="' .. beautiful.tertiary .. '"><b>' .. bat_now.perc .. "</b></span>")
+        widget:set_markup('<span color="' .. beautiful.text .. '"><b>' .. bat_now.perc .. "</b></span>")
         bat_notification_charged_preset = {
             border_color = beautiful.bg_normal,
             border_width = dpi(10),
