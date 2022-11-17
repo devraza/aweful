@@ -14,6 +14,7 @@ local theme = dofile(themes_path .. "default/theme.lua")
 theme.primary = xrdb.color4
 theme.text = xrdb.foreground
 theme.secondary = xrdb.color5
+theme.tertiary = xrdb.color2
 theme.negative = xrdb.color1
 theme.positive = xrdb.color3
 theme.disabled = xrdb.color8
@@ -63,10 +64,10 @@ theme.icon_theme = nil
 theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
 
 -- Taglist colours
-theme.taglist_fg_focus = theme.negative
+theme.taglist_fg_focus = theme.secondary
 theme.taglist_bg_focus = "#00000000"
 theme.taglist_fg_urgent = "#00000000"
-theme.taglist_bg_urgent = theme.negative
+theme.taglist_bg_urgent = theme.secondary
 
 -- Disable taglist squares:
 local taglist_square_size = dpi(0)

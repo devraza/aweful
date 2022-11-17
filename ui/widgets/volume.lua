@@ -10,7 +10,7 @@ volume =
         if volume == "muted" then
             widget:set_markup("<span color='" .. beautiful.negative .. "'>mut</span>")
         else
-            widget:set_markup(volume:gsub("%%", ""))
+            widget:set_markup('<span color="' .. beautiful.primary .. '"><b>' .. volume:gsub("%%", "") .. "</b></span>" )
         end
     end
 )
