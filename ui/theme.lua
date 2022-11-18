@@ -75,7 +75,7 @@ theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.primary)
 
 -- Set the wallpaper
-theme.wallpaper = gfs.get_configuration_dir() .. "assets/wallpapers/wallpaper.jpg"
+theme.wallpaper = gfs.get_configuration_dir() .. "assets/wallpapers/wallpaper.png"
 
 -- Set different colors for urgent notifications.
 rnotification.connect_signal(
