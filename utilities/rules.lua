@@ -45,9 +45,5 @@ ruled.client.connect_signal('request::rules', function()
     rule = { class = 'zoom' },
     properties = { screen = 1, tag = '5', switch_to_tags = true, floating = true }
   }
-  ruled.client.append_rule {
-    rule = { class = 'Emacs' },
-    properties = { screen = 1, tag = '3', switch_to_tags = true }
-  }
 end)
 
