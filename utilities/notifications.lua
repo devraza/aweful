@@ -3,6 +3,7 @@ local awful = require("awful")
 local lain = require("lain")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
+local dpi = beautiful.xresources.apply_dpi
 
 -- Notificaton on errors
 naughty.connect_signal(
@@ -16,6 +17,7 @@ naughty.connect_signal(
     end
 )
 
+-- Enable notifications
 ruled.notification.connect_signal(
     "request::rules",
     function()
@@ -24,23 +26,26 @@ ruled.notification.connect_signal(
             rule = {},
             properties = {
                 screen = awful.screen.preferred,
-                implicit_timeout = 5
+                implicit_timeout = 5,
             }
         }
     end
 )
 
-naughty.connect_signal(
-    "request::display",
-    function(n)
-        naughty.layout.box {notification = n}
-    end
-)
+naughty.connect_signal (
+   "request::display", function(n)
+      n.title = string.format("<span color = '" .. beautiful.secondary .. "'>%s</span>", n.title)
+      n.message = string.format("<span font-weight = '400'>%s</span>", n.message)
+      n.border_width = dpi(10)
+      naughty.layout.box {
+	 notification = n,
+      }
+end)
 
 -- MPD Notifications
 local mpd =
     lain.widget.mpd {
-    timeout = 0.2,
+    timeout = 1,
     settings = function()
         mpd_notification_preset = {
             bg = beautiful.bg_normal,

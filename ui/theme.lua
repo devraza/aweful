@@ -1,6 +1,7 @@
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
-local rnotification = require("ruled.notification")
+local naughty = require("naughty")
+local ruled = require("ruled")
 local dpi = xresources.apply_dpi
 local xrdb = xresources.get_current_theme()
 local gears = require("gears")
@@ -31,7 +32,6 @@ theme.icon_color = theme.primary
 -- Theme variables
 theme.bg_normal = xrdb.background
 theme.bg_focus = theme.primary
-theme.bg_urgent = xrdb.color9
 theme.bg_minimize = xrdb.color8
 theme.bg_systray = theme.bg_normal
 
@@ -49,6 +49,11 @@ theme.tooltip_bg = theme.bg_normal
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
 theme.menu_height = dpi(16)
 theme.menu_width = dpi(100)
+
+-- Notifications
+theme.notification_bg = xrdb.background
+theme.notification_border_color = xrdb.background
+theme.notification_border_width = dpi(10)
 
 -- Snapping
 theme.snap_border_width = 1
@@ -78,14 +83,17 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_
 theme.wallpaper = gfs.get_configuration_dir() .. "assets/wallpapers/wallpaper.png"
 
 -- Set different colors for urgent notifications.
-rnotification.connect_signal(
+ruled.notification.connect_signal(
     "request::rules",
     function()
-        rnotification.append_rule {
-            rule = {urgency = "critical"},
-            properties = {bg = "" .. theme.bg_urgent, fg = "" .. theme.bg_normal}
+        ruled.notification.append_rule {
+            rule = { urgency = "critical" },
+            properties = {
+	       bg = theme.bg_normal,
+	       fg = theme.negative,
+	    }
         }
-    end
+   end
 )
 
 -- Return the theme
