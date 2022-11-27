@@ -15,8 +15,8 @@ awesomemenu = {
             hotkeys_popup.show_help(nil, awful.screen.focused())
         end
     },
-    {"Config", editor .. " " .. awesome.conffile},
-    {"Restart", awesome.restart},
+    { "Config", editor .. " " .. awesome.conffile },
+    { "Restart", awesome.restart },
     {
         "Quit",
         function()
@@ -26,7 +26,7 @@ awesomemenu = {
 }
 
 mainmenu =
-    awful.menu(
+    awful.menu (
     {
         items = {
             { "Awesome", awesomemenu },

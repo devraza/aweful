@@ -9,35 +9,44 @@ client.connect_signal(
         awful.keyboard.append_client_keybindings(
             {
                 awful.key(
-                    {modkey},
+                    { modkey },
                     "f",
                     function(c)
                         c.fullscreen = not c.fullscreen
                         c:raise()
                     end,
-                    {description = "Toggle fullscreen", group = "Client"}
+                    { description = "Toggle fullscreen", group = "Client" }
                 ),
                 awful.key(
-                    {modkey, "Shift"},
+                    { modkey },
+                    "q",
+
+		    function ()
+		       mainmenu:toggle()
+		    end,
+                    { description = "Awesome Menu", group = "Awesome" }
+                ),
+                awful.key(
+                    { modkey, "Shift" },
                     "c",
                     function(c)
                         c:kill()
                     end,
-                    {description = "Close client", group = "Client"}
+                    { description = "Close client", group = "Client" }
                 ),
                 awful.key(
-                    {modkey},
+                    { modkey},
                     "w",
                     awful.client.floating.toggle,
-                    {description = "Toggle floating", group = "Client"}
+                    { description = "Toggle floating", group = "Client" }
                 ),
                 awful.key(
-                    {modkey, "Shift"},
+                    { modkey, "Shift" },
                     "Return",
                     function(c)
                         c:swap(awful.client.getmaster())
                     end,
-                    {description = "Move to top", group = "Client"}
+                    { description = "Move to top", group = "Client" }
                 ),
                 awful.key(
                     {modkey},
