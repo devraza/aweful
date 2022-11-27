@@ -32,7 +32,8 @@ mainmenu =
             { "Awesome", awesomemenu },
             { "Terminal", terminal },
 	    { "Music", music_player },
-	    { "Monitor", monitor }
+	    { "Monitor", monitor },
+	    { "Browser", browser }
         }
     }
 )
