@@ -35,7 +35,7 @@ ruled.notification.connect_signal(
 naughty.connect_signal (
    "request::display", function(n)
       n.title = string.format("<span color = '" .. beautiful.secondary .. "'>%s</span>", n.title)
-      n.border_width = dpi(10)
+      n.margin = dpi(15)
       naughty.layout.box {
 	 notification = n,
       }
@@ -47,13 +47,11 @@ local mpd =
     timeout = 1,
     settings = function()
         mpd_notification_preset = {
-            bg = beautiful.bg_normal,
-            border_color = beautiful.bg_normal,
-            border_width = dpi(10),
-            timeout = 1,
-            fg = beautiful.text,
-            title = '<span color="' .. beautiful.tertiary .. '"><b>' .. "Now playing" .. "</b></span>",
-            text = mpd_now.title .. " - " .. mpd_now.artist
+	   bg = beautiful.bg_normal,
+	   timeout = 1,
+	   fg = beautiful.text,
+	   title = '<span color="' .. beautiful.tertiary .. '"><b>' .. "Now playing" .. "</b></span>",
+	   text = mpd_now.title .. " - " .. mpd_now.artist
         }
     end
 }
