@@ -74,6 +74,15 @@ theme.taglist_bg_focus = "#00000000"
 theme.taglist_fg_urgent = "#00000000"
 theme.taglist_bg_urgent = theme.secondary
 
+-- Increase spacing between taglist items
+theme.taglist_spacing = dpi(6)
+
+-- Tasklist
+theme.tasklist_fg_focus = theme.secondary
+theme.tasklist_fg_minimize = theme.disabled
+theme.tasklist_plain_task_name = true
+theme.tasklist_spacing = dpi(10)
+
 -- Disable taglist squares:
 local taglist_square_size = dpi(0)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.primary)

@@ -3,6 +3,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 local naughty = require("naughty")
+local gears = require("gears")
 
 --- Wibar ---
 screen.connect_signal(
@@ -17,10 +18,30 @@ screen.connect_signal(
         -- Prompt
         s.prompt = awful.widget.prompt()
 
+	-- Tasklist widget
+	s.tasklist = awful.widget.tasklist {
+	   screen  = s,
+	   filter  = awful.widget.tasklist.filter.currenttags,
+	   widget_template = {
+		 {
+		    id = "text_role",
+    	       	    widget = wibox.widget.textbox,
+		 },
+		 valign = "center",
+		 halign = "center",
+		 widget = wibox.container.place,
+	   },
+	   buttons = {
+	      awful.button({ }, 1, function (c)
+		    c:activate { context = "tasklist", action = "toggle_minimization" }
+	      end),
+	   }
+	}
+
         local layoutbox =
             awful.widget.layoutbox {
             screen = s,
-            forced_height = dpi(20),
+            forced_width = dpi(18),
             -- Add buttons, allowing you to change the layout
             buttons = {
                 awful.button(
@@ -95,10 +116,6 @@ screen.connect_signal(
             awful.widget.taglist {
             screen = s,
             filter = awful.widget.taglist.filter.all,
-            layout = {
-                spacing = dpi(6),
-                layout = wibox.layout.fixed.vertical
-            },
             buttons = {
                 awful.button(
                     {},
@@ -127,46 +144,42 @@ screen.connect_signal(
                     end
                 ),
                 awful.button(
-                    {},
+		   {},
                     4,
                     function(t)
-                        awful.tag.viewprev(t.screen)
+		       awful.tag.viewprev(t.screen)
                     end
                 ),
                 awful.button(
-                    {},
+		   {},
                     5,
                     function(t)
-                        awful.tag.viewnext(t.screen)
+		       awful.tag.viewnext(t.screen)
                     end
                 )
             }
-        }
-
-        s.top_panel =
+	    }
+	 
+	 s.top_panel =
             awful.wibar {
-            position = "left",
-            width = dpi(34),
-            forced_height = dpi(20),
-            screen = s,
-            widget = {
-                layout = wibox.layout.align.vertical,
-                {
-                    -- Top widgets
-                    wibox.container.margin(wibox.container.place(s.taglist), 0, 0, dpi(10), 0),
-                    layout = wibox.layout.fixed.vertical
+	       position = "bottom",
+	       height = dpi(35),
+	       screen = s,
+	       widget = {
+		  layout = wibox.layout.align.horizontal,
+		  {
+		     -- Top widgets
+		     wibox.container.margin(s.taglist, dpi(8)),
+		     layout = wibox.layout.fixed.horizontal
                 }, -- Center widget
-                wibox.container.place(),
-                {
-                    -- Bottom widgets
-                    layout = wibox.layout.fixed.vertical,
-                    wibox.container.place(battery),
-                    wibox.container.margin(wibox.container.place(volume), 0, 0, 0, dpi(20)),
-                    wibox.container.margin(wibox.container.place(layoutbox), 0, 0, 0, dpi(20)),
-                    wibox.container.place(clock),
-                    wibox.container.margin(wibox.container.place(powermenu), dpi(-4), 0, dpi(15), dpi(15))
-                }
-            }
-        }
+		  wibox.container.place(s.tasklist),
+		  {
+		     -- Bottom widgets
+		     layout = wibox.layout.fixed.horizontal,
+		     wibox.container.margin(clock, dpi(14)),
+		     wibox.container.margin(wibox.container.place(layoutbox), dpi(14), dpi(10)),
+		  }
+	       }
+	    }
     end
 )
