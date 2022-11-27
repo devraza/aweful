@@ -18,15 +18,6 @@ client.connect_signal(
                     { description = "Toggle fullscreen", group = "Client" }
                 ),
                 awful.key(
-                    { modkey },
-                    "q",
-
-		    function ()
-		       mainmenu:toggle()
-		    end,
-                    { description = "Awesome Menu", group = "Awesome" }
-                ),
-                awful.key(
                     { modkey, "Shift" },
                     "c",
                     function(c)
@@ -102,6 +93,14 @@ awful.keyboard.append_global_keybindings(
         awful.key({modkey}, "s", hotkeys_popup.show_help, {description = "Show help", group = "Awesome"}),
         awful.key({modkey, "Shift"}, "r", awesome.restart, {description = "Reload", group = "Awesome"}),
         awful.key({modkey, "Shift"}, "q", awesome.quit, {description = "Quit", group = "Awesome"}),
+	awful.key(
+	   { modkey },
+	   "q",
+	   function ()
+	      mainmenu:toggle()
+	   end,
+	   { description = "Awesome Menu", group = "Awesome" }
+	),
         awful.key(
             {modkey},
             "Return",
