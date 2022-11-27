@@ -35,7 +35,6 @@ ruled.notification.connect_signal(
 naughty.connect_signal (
    "request::display", function(n)
       n.title = string.format("<span color = '" .. beautiful.secondary .. "'>%s</span>", n.title)
-      n.message = string.format("<span font-weight = '400'>%s</span>", n.message)
       n.border_width = dpi(10)
       naughty.layout.box {
 	 notification = n,

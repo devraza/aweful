@@ -6,10 +6,9 @@ local function saved_screenshot(args)
 
     local function notify_screenshot(self)
         naughty.notification {
-            title = "Screenshot Saved",
-            message = self.file_path,
+            title = " Screenshot Saved",
+            message = " " .. self.file_path,
             icon = self.surface,
-            icon_size = 128,
         }
     end
 
