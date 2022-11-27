@@ -18,30 +18,10 @@ screen.connect_signal(
         -- Prompt
         s.prompt = awful.widget.prompt()
 
-	-- Tasklist widget
-	s.tasklist = awful.widget.tasklist {
-	   screen  = s,
-	   filter  = awful.widget.tasklist.filter.currenttags,
-	   widget_template = {
-		 {
-		    id = "text_role",
-    	       	    widget = wibox.widget.textbox,
-		 },
-		 valign = "center",
-		 halign = "center",
-		 widget = wibox.container.place,
-	   },
-	   buttons = {
-	      awful.button({ }, 1, function (c)
-		    c:activate { context = "tasklist", action = "toggle_minimization" }
-	      end),
-	   }
-	}
-
         local layoutbox =
             awful.widget.layoutbox {
             screen = s,
-            forced_width = dpi(18),
+            forced_width = dpi(20),
             -- Add buttons, allowing you to change the layout
             buttons = {
                 awful.button(
@@ -172,7 +152,7 @@ screen.connect_signal(
 		     wibox.container.margin(s.taglist, dpi(8)),
 		     layout = wibox.layout.fixed.horizontal
                 }, -- Center widget
-		  wibox.container.place(s.tasklist),
+		  wibox.container.place(),
 		  {
 		     -- Bottom widgets
 		     layout = wibox.layout.fixed.horizontal,
