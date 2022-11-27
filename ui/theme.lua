@@ -5,8 +5,8 @@ local ruled = require("ruled")
 local dpi = xresources.apply_dpi
 local xrdb = xresources.get_current_theme()
 local gears = require("gears")
-local gfs = require("gears.filesystem")
-local themes_path = gfs.get_themes_dir()
+local themes_path = gears.filesystem.get_themes_dir()
+local icon_path = gears.filesystem.get_configuration_dir() .. "assets/icons/"
 
 -- Inherit default theme
 local theme = dofile(themes_path .. "default/theme.lua")
@@ -46,10 +46,6 @@ theme.border_width = dpi(0)
 theme.tooltip_fg = theme.fg_normal
 theme.tooltip_bg = theme.bg_normal
 
-theme.menu_submenu_icon = themes_path .. "default/submenu.png"
-theme.menu_height = dpi(16)
-theme.menu_width = dpi(100)
-
 -- Notifications
 theme.notification_bg = xrdb.background
 theme.notification_border_color = xrdb.background
@@ -83,13 +79,19 @@ theme.tasklist_fg_minimize = theme.disabled
 theme.tasklist_plain_task_name = true
 theme.tasklist_spacing = dpi(10)
 
+theme.menu_submenu_icon = gears.color.recolor_image(icon_path .. "submenu.png", theme.fg_normal)
+theme.menu_bg_focus = theme.bg_normal
+theme.menu_fg_focus = theme.secondary
+theme.menu_height = dpi(30)
+theme.menu_width = dpi(150)
+
 -- Disable taglist squares:
 local taglist_square_size = dpi(0)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.primary)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.primary)
 
 -- Set the wallpaper
-theme.wallpaper = gfs.get_configuration_dir() .. "assets/wallpapers/wallpaper.png"
+theme.wallpaper = gears.filesystem.get_configuration_dir() .. "assets/wallpapers/wallpaper.png"
 
 -- Set different colors for urgent notifications.
 ruled.notification.connect_signal(

@@ -8,7 +8,7 @@ local beautiful = require("beautiful")
 local menubar = require("menubar")
 
 -- Menu & Submenu --
-menu = {
+awesomemenu = {
     {
         "Hotkeys",
         function()
@@ -29,8 +29,10 @@ mainmenu =
     awful.menu(
     {
         items = {
-            {"Awesome", menu, beautiful.awesome_icon},
-            {"Terminal", terminal}
+            { "Awesome", awesomemenu },
+            { "Terminal", terminal },
+	    { "Music", music_player },
+	    { "Monitor", monitor }
         }
     }
 )
