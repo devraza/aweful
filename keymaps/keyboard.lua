@@ -134,43 +134,43 @@ awful.keyboard.append_global_keybindings(
     }
 )
 
-awful.keyboard.append_global_keybindings(
-    {
-        awful.key(
-            {modkey, "Shift"},
-            "a",
-            function()
-                awful.spawn.with_shell(
-                    "scrot ~/Pictures/Screenshots/" ..
-                        os.date("%d.%m.%Y-%H:%M:%S") .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
-                )
-            end,
-            {description = "Capture screen", group = "Screenshot"}
-        ),
-        awful.key(
-            {modkey, "Shift"},
-            "s",
-            function()
-                awful.spawn.with_shell(
-                    "scrot -s -f ~/Pictures/Screenshots/" ..
-                        os.date("%d.%m.%Y-%H:%M:%S") .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
-                )
-            end,
-            {description = "Capture area", group = "Screenshot"}
-        ),
-        awful.key(
-            {modkey, "Shift"},
-            "d",
-            function()
-                awful.spawn.with_shell(
-                    "scrot -u ~/Pictures/Screenshots/" ..
-                        os.date("%d.%m.%Y-%H:%M:%S") .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
-                )
-            end,
-            {description = "Capture window", group = "Screenshot"}
-        )
-    }
-)
+-- awful.keyboard.append_global_keybindings(
+--     {
+--         awful.key(
+--             {modkey, "Shift"},
+--             "a",
+--             function()
+--                 awful.spawn.with_shell(
+--                     "scrot ~/Pictures/Screenshots/" ..
+--                         os.date("%d.%m.%Y-%H:%M:%S") .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
+--                 )
+--             end,
+--             {description = "Capture screen", group = "Screenshot"}
+--         ),
+--         awful.key(
+--             {modkey, "Shift"},
+--             "s",
+--             function()
+--                 awful.spawn.with_shell(
+--                     "scrot -s -f ~/Pictures/Screenshots/" ..
+--                         os.date("%d.%m.%Y-%H:%M:%S") .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
+--                 )
+--             end,
+--             {description = "Capture area", group = "Screenshot"}
+--         ),
+--         awful.key(
+--             {modkey, "Shift"},
+--             "d",
+--             function()
+--                 awful.spawn.with_shell(
+--                     "scrot -u ~/Pictures/Screenshots/" ..
+--                         os.date("%d.%m.%Y-%H:%M:%S") .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
+--                 )
+--             end,
+--             {description = "Capture window", group = "Screenshot"}
+--         )
+--     }
+-- )
 
 -- Rofi
 awful.keyboard.append_global_keybindings(

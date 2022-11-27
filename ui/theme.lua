@@ -62,13 +62,16 @@ theme = theme_assets.recolor_layout(theme, theme.fg_normal)
 theme.icon_theme = nil
 
 -- Generate Awesome icon:
-theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
+theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.disabled, theme.bg_normal)
 
 -- Taglist colours
 theme.taglist_fg_focus = theme.secondary
 theme.taglist_bg_focus = "#00000000"
 theme.taglist_fg_urgent = "#00000000"
 theme.taglist_bg_urgent = theme.secondary
+
+-- Screenshots
+theme.screenshot_frame_color = theme.secondary
 
 -- Increase spacing between taglist items
 theme.taglist_spacing = dpi(6)
@@ -79,6 +82,7 @@ theme.tasklist_fg_minimize = theme.disabled
 theme.tasklist_plain_task_name = true
 theme.tasklist_spacing = dpi(10)
 
+-- Menu
 theme.menu_submenu_icon = gears.color.recolor_image(icon_path .. "submenu.png", theme.fg_normal)
 theme.menu_bg_focus = theme.bg_normal
 theme.menu_fg_focus = theme.secondary

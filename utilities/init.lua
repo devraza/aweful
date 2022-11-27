@@ -18,3 +18,6 @@ require("utilities.bling")
 
 -- Sloppy focus
 require("utilities.focus")
+
+-- Screenshots
+require("utilities.screenshot")

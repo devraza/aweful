@@ -139,6 +139,18 @@ screen.connect_signal(
                 )
             }
 	    }
+
+	 local distro = wibox.widget {
+	    image = beautiful.awesome_icon,
+	    resize = true,
+	    forced_width = dpi(17),
+	    widget = wibox.widget.imagebox,
+	    buttons = {
+	       awful.button({}, 1, nil, function ()
+		     notify("Test")
+	       end)
+	    }
+	 }
 	 
 	 s.top_panel =
             awful.wibar {
@@ -149,7 +161,8 @@ screen.connect_signal(
 		  layout = wibox.layout.align.horizontal,
 		  {
 		     -- Top widgets
-		     wibox.container.margin(s.taglist, dpi(8)),
+		     wibox.container.margin(wibox.container.place(distro), dpi(8)),
+		     wibox.container.margin(s.taglist, dpi(14)),
 		     layout = wibox.layout.fixed.horizontal
                 }, -- Center widget
 		  wibox.container.place(),

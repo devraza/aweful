@@ -15,6 +15,8 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "ui/theme.lua")
 
 -- Variables --
 
+-- Screenshot directory
+screenshot_path = "~/Pictures/Screenshots/"
 -- Terminal emulator
 terminal = "alacritty"
 -- Editor. This will be run directly
