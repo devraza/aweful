@@ -16,8 +16,8 @@ powermenu =
             1,
             nil,
             function()
-                os.execute("sudo poweroff")
-                notify("Shutting down", "Powering off now...")
+	       notify("Shutting down", "Powering off now...")
+	       os.execute("sudo poweroff")
             end
         ),
         awful.button(
@@ -25,8 +25,8 @@ powermenu =
             3,
             nil,
             function()
-                os.execute("sudo reboot")
                 notify("Rebooting", "Rebooting now...")
+                os.execute("sudo reboot")
             end
         )
     },
