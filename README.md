@@ -43,7 +43,7 @@ Additionally, all keys bound to an application (those in the **Applications** ca
 **Aweful** utilises the `bling` and `lain` AwesomeWM modules, which are necessary for the config to load successfully. These are their seperate git repositories, so clone this repository with them as follows:
 
 ```
-git clone --recurse-submodules ssh://192.168.1.209/aweful
+git clone --recurse-submodules https://github.com/devraza/aweful
 ```
 
 Links to submodules are also provided in this document.
