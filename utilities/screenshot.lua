@@ -1,5 +1,6 @@
 local naughty = require("naughty")
 local awful = require("awful")
+local dpi = require("beautiful").xresources.apply_dpi
 
 local function saved_screenshot(args)
     local ss = awful.screenshot(args)
@@ -8,7 +9,6 @@ local function saved_screenshot(args)
         naughty.notification {
             title = " Screenshot Saved",
             message = " " .. self.file_path,
-            icon = self.surface,
         }
     end
 

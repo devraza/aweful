@@ -96,6 +96,10 @@ screen.connect_signal(
             awful.widget.taglist {
             screen = s,
             filter = awful.widget.taglist.filter.all,
+	    layout = {
+	       spacing = dpi(6),
+	       layout = wibox.layout.fixed.vertical
+	    },
             buttons = {
                 awful.button(
                     {},
@@ -140,7 +144,7 @@ screen.connect_signal(
             }
 	    }
 
-	 local distro = wibox.widget {
+	 local aweful_icon = wibox.widget {
 	    image = beautiful.awesome_icon,
 	    resize = true,
 	    forced_width = dpi(17),
@@ -154,24 +158,25 @@ screen.connect_signal(
 	 
 	 s.top_panel =
             awful.wibar {
-	       position = "bottom",
-	       height = dpi(35),
+	       position = "left",
+	       width = dpi(34),
+	       forced_height = dpi(20),
 	       screen = s,
 	       widget = {
-		  layout = wibox.layout.align.horizontal,
+		  layout = wibox.layout.align.vertical,
 		  {
 		     -- Top widgets
-		     wibox.container.margin(wibox.container.place(distro), dpi(8)),
-		     wibox.container.margin(s.taglist, dpi(14)),
-		     layout = wibox.layout.fixed.horizontal
-                }, -- Center widget
+		     wibox.container.margin(wibox.container.place(aweful_icon), 0, 0, dpi(9)),
+		     wibox.container.margin(wibox.container.place(s.taglist), 0, 0, dpi(-1)),
+		     layout = wibox.layout.fixed.vertical
+		  }, -- Center widget
 		  wibox.container.place(),
 		  {
 		     -- Bottom widgets
-		     layout = wibox.layout.fixed.horizontal,
-		     wibox.container.margin(volume, dpi(14)),
-		     wibox.container.margin(clock, dpi(14)),
-		     wibox.container.margin(wibox.container.place(layoutbox), dpi(14), dpi(10)),
+		     layout = wibox.layout.fixed.vertical,
+		     wibox.container.margin(wibox.container.place(volume), 0, 0, 0, dpi(14)),
+		     wibox.container.margin(wibox.container.place(clock), 0, dpi(1)),
+		     wibox.container.margin(wibox.container.place(layoutbox), 0, 0, dpi(20)),
 		  }
 	       }
 	    }
