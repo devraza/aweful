@@ -97,9 +97,13 @@ awful.keyboard.append_global_keybindings(
 	   { modkey },
 	   "q",
 	   function ()
-	      mainmenu:toggle()
+	      if dashboard.visible == false then
+		 dashboard.visible = true
+	      else
+		 dashboard.visible = false
+	      end
 	   end,
-	   { description = "Awesome Menu", group = "Awesome" }
+	   { description = "Toggle Dashboard", group = "Awesome" }
 	),
         awful.key(
             {modkey},
@@ -254,7 +258,7 @@ awful.keyboard.append_global_keybindings(
             {modkey, "Shift"},
             "l",
             function()
-                awful.spawn("slock")
+                awful.spawn(locker)
             end,
             {description = "Screen Locker", group = "Applications"}
         )

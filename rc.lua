@@ -35,6 +35,8 @@ monitor = terminal .. " -e btm"
 chat = terminal .. " -e tiny"
 -- PDF Viewer
 pdf = "zathura"
+-- Screen locker
+locker = "slock"
 
 -- User modules
 require("utilities")

@@ -1,35 +1,27 @@
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+local awful = require("awful")
 local naughty = require("naughty")
 
 function colourise(text, fg)
     if fg == "" then
         fg = beautiful.primary
     end
-    return " <span foreground='" .. fg .. "'>" .. text .. "</span>"
+    return "<span foreground='" .. fg .. "'>" .. text .. "</span>"
 end
 
-function icon_colourise(colour, code)
+function icon(code, colour, size, but)
     return wibox.widget {
-        font = beautiful.icon_font,
-        markup = ' <span color="' .. colour .. '">' .. code .. "</span>",
+        font = beautiful.icon_font_sizeable .. " " .. size,
+        markup = "<span color='" .. colour .. "'>" .. code .. "</span>",
         align = "center",
         valign = "center",
-        widget = wibox.widget.textbox
+	buttons = but,
+        widget = wibox.widget.textbox,
     }
 end
 
-function icon(code)
-    return wibox.widget {
-        font = beautiful.icon_font,
-        markup = ' <span color="' .. beautiful.primary .. '">' .. code .. "</span>",
-        align = "center",
-        valign = "center",
-        widget = wibox.widget.textbox
-    }
-end
-
-function text_size(text, size, colour)
+function text(text, size, colour)
     return wibox.widget {
         font = beautiful.font_sizeable .. "" .. size,
         markup = '<span color="' .. colour .. '">' .. text .. "</span>",

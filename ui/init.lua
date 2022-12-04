@@ -7,3 +7,6 @@ require("ui.widgets")
 
 -- Load panel
 require("ui.panel")
+
+-- Load the dashboard
+require("ui.dashboard")

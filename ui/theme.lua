@@ -26,14 +26,14 @@ theme.font_sizeable = "Iosevka "
 
 -- Icon font and resizable icon font (appand a size as a string)
 theme.icon_font = "Font Awesome 6 Pro 12.5"
-theme.icon_font_sizable = "Font Awesome 6 Pro "
+theme.icon_font_sizeable = "Font Awesome 6 Pro "
 theme.icon_color = theme.primary
 
 -- Theme variables
 theme.bg_normal = xrdb.background
 theme.bg_focus = theme.primary
-theme.bg_minimize = xrdb.color8
-theme.bg_systray = theme.bg_normal
+theme.bg_light = xrdb.color0
+theme.bg_dark = "#0d0d0d"
 
 theme.fg_normal = xrdb.foreground
 theme.fg_focus = theme.bg_normal
@@ -88,6 +88,10 @@ theme.menu_bg_focus = theme.bg_normal
 theme.menu_fg_focus = theme.secondary
 theme.menu_height = dpi(30)
 theme.menu_width = dpi(150)
+
+-- Calender
+theme.calendar_font = theme.font
+theme.calendar_spacing = dpi(5)
 
 -- Disable taglist squares:
 local taglist_square_size = dpi(0)

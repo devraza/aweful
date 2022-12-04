@@ -151,7 +151,11 @@ screen.connect_signal(
 	    widget = wibox.widget.imagebox,
 	    buttons = {
 	       awful.button({}, 1, nil, function ()
-		     notify("Test")
+		     if dashboard.visible == false then
+			dashboard.visible = true
+		     else
+			dashboard.visible = false
+		     end
 	       end)
 	    }
 	 }
@@ -174,9 +178,8 @@ screen.connect_signal(
 		  {
 		     -- Bottom widgets
 		     layout = wibox.layout.fixed.vertical,
-		     wibox.container.margin(wibox.container.place(volume), 0, 0, 0, dpi(14)),
-		     wibox.container.margin(wibox.container.place(clock), 0, dpi(1)),
-		     wibox.container.margin(wibox.container.place(layoutbox), 0, 0, dpi(20)),
+		     wibox.container.margin(wibox.container.place(clock)),
+		     wibox.container.margin(wibox.container.place(layoutbox), 0, 0, dpi(16)),
 		  }
 	       }
 	    }

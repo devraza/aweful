@@ -8,9 +8,9 @@ volume =
     function(widget, stdout)
         local volume = string.match(stdout, "muted") or stdout:gsub("%s+", "")
         if volume == "muted" then
-            widget:set_markup("<span color='" .. beautiful.negative .. "'>mut</span>")
+	   widget:set_markup(colourise("Volume:\n", beautiful.secondary) .. "<span color='" .. beautiful.negative .. "'>mut</span>")
         else
-	   widget:set_markup('<span color="' .. beautiful.primary .. '"><b>' .. volume:gsub("%%", "") .. "</b></span>")
+	   widget:set_markup(colourise("Volume:\n", beautiful.secondary) .. "<b>" .. volume .. "</b>")
         end
     end
 )
