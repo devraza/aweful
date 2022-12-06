@@ -11,9 +11,6 @@ config.bind('<Shift-c>', 'history-clear -f')
 config.bind('<Shift-j>', 'tab-prev')
 config.bind('<Shift-k>', 'tab-next')
 
-# Smooth scrolling
-config.set('scrolling.smooth', True)
-
 # Dark mode default
 config.set('colors.webpage.preferred_color_scheme', 'dark')
 
