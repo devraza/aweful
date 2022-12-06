@@ -21,3 +21,6 @@ require("utilities.focus")
 
 -- Screenshots
 require("utilities.screenshot")
+
+-- Scratchpads
+require "utilities.scratchpads"

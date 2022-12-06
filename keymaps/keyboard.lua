@@ -105,6 +105,14 @@ awful.keyboard.append_global_keybindings(
 	   end,
 	   { description = "Toggle Dashboard", group = "Awesome" }
 	),
+	awful.key(
+	   { modkey },
+	   "t",
+	   function ()
+	      scratch:toggle()
+	   end,
+	   { description = "Toggle Scratchpad", group = "Awesome" }
+	),
         awful.key(
             {modkey},
             "Return",
