@@ -1,14 +1,8 @@
-#!/bin/sh
-
-run() {
-  if ! pgrep -f "$1"; then
-    "$@" &
-  fi
-}
+#!/bin/bash
 
 emacs --daemon &
-
-run pipewire
-run pipewire-pulse
-run picom
-run mpd
+pipewire &
+pipewire-pulse &
+picom &
+mpd &
+alacritty --class spad -e tiny &

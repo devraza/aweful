@@ -1,5 +1,6 @@
 local wibox = require "wibox"
 local beautiful = require "beautiful"
+local dpi = beautiful.xresources.apply_dpi
 local styles = {}
 
 styles.month = {
@@ -8,7 +9,7 @@ styles.month = {
 
 styles.normal = {
    markup = function(t)
-      return "<span font_desc='" .. beautiful.font_sizeable .. " Bold 9" .. "'>" .. t .. "</span>"
+      return "<span font_desc='" .. beautiful.font_sizeable .. " Bold 10" .. "'>" .. t .. "</span>"
    end,
 }
 
@@ -17,17 +18,16 @@ styles.focus = {
    markup = function(t)
       return "<span font_desc='" .. beautiful.font_sizeable .. " Bold 10" .. "'>" .. t .. "</span>"
    end,
-   padding = 5,
 }
 
 styles.header = {
    markup = function(t)
-      return "<span font_desc='" .. beautiful.font_sizeable .. " Bold 13" .. "'>" .. t .. "</span>"
+      return "<span font_desc='" .. beautiful.font_sizeable .. " Bold 11" .. "'>" .. t .. "</span>"
    end,
 }
 styles.weekday = {
    markup = function(t)
-      return "<span color='" .. beautiful.primary .. "'font_desc='" .. beautiful.font_sizeable .. " Italic 9" .. "'>" .. t .. "</span>"
+      return "<span color='" .. beautiful.primary .. "'font_desc='" .. beautiful.font_sizeable .. " Italic 10" .. "'>" .. t .. "</span>"
    end,
 }
 
@@ -56,7 +56,7 @@ end
 
 calendar_widget = wibox.widget {
    date = os.date "*t",
-   spacing = 15,
+   spacing = dpi(8),
    fn_embed = decorate_cell,
    widget = wibox.widget.calendar.month,
 }
