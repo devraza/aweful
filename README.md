@@ -7,12 +7,9 @@ This repository contains my AwesomeWM configuration, made with lots of **Love**.
 
 **Aweful** requires that some programs be installed to the host system in order to be fully functional. Below is a list of those which fit this category.
 
-- `scrot`
 - `xclip`
 - `pamixer`
 - `rofi`
-- `mpc`
-- `mpd`
 - `xrdb`
 
 > Please keep in mind that all of these are optional for the configuration to load, but necessary if you want some functionality (for example, `scrot` is required for screenshots)
