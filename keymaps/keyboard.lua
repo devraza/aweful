@@ -210,7 +210,7 @@ awful.keyboard.append_global_keybindings(
             {modkey},
             "p",
             function()
-                awful.spawn.with_shell("gpick -s -o | xclip -selection clipboard -i")
+                awful.spawn.with_shell(colour_picker .. " | xclip -selection clipboard -i")
             end,
             {description = "Colour Picker", group = "Applications"}
         ),
