@@ -160,6 +160,7 @@ awful.keyboard.append_global_keybindings(
             { modkey, "Control" },
             "a",
             function()
+	       notify("Powering off...", "Shutting down now!")
 	       awful.spawn.with_shell("sudo poweroff")
             end,
             { description = "Poweroff", group = "Powermenu" }),
@@ -167,6 +168,7 @@ awful.keyboard.append_global_keybindings(
             { modkey, "Control" },
             "s",
             function()
+	       notify("Rebooting...", "Restarting now!")
 	       awful.spawn.with_shell("sudo reboot")
             end,
             { description = "Reboot", group = "Powermenu" })
