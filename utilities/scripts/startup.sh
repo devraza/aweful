@@ -10,5 +10,5 @@ export SCRIPTPATH="$(
 emacs --daemon &
 pulseaudio &
 mpd &
-alacritty --class spad -e tiny &
 $SCRIPTPATH/monitors.sh
+alacritty --class spad -e tiny &

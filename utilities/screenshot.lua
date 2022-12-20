@@ -64,8 +64,8 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ modkey, "Shift" }, "s",
 	   function () saved_screenshot {
 		 file_path = screenshot_path .. os.date("%d.%m.%Y-%H:%M:%S") .. ".png",
-		 auto_save_delay = 0,
 		 interactive = true,
+		 auto_save_delay = 0,
 	   } end,
 	   { description = "Interactive Capture", group = "Screenshot" }),
 	awful.key({ modkey, "Shift"}, "d",
