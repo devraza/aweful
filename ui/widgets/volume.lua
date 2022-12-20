@@ -4,7 +4,7 @@ local beautiful = require("beautiful")
 volume =
     awful.widget.watch(
     "pamixer --get-volume-human",
-    0.05,
+    0,
     function(widget, stdout)
         local volume = string.match(stdout, "muted") or stdout:gsub("%s+", "")
         if volume == "muted" then
