@@ -11,4 +11,3 @@ pipewire-pulse &
 emacs --daemon &
 mpd &
 $SCRIPTPATH/monitors.sh
-alacritty --class spad -e tiny &
