@@ -1,4 +1,3 @@
-local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
@@ -28,7 +27,7 @@ client.connect_signal(
                     { description = "Close client", group = "Client" }
                 ),
                 awful.key(
-                    { modkey },
+                    { modkey},
                     "w",
                     awful.client.floating.toggle,
                     { description = "Toggle floating", group = "Client" }
@@ -133,31 +132,34 @@ awful.keyboard.append_global_keybindings(
             {modkey, "Control"},
             "j",
             function()
-	       awful.spawn("pamixer -d 10")
 	       awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout)
-						    notify("Volume", stdout:gsub("\n[^\n]*$", ""))
+						    notify("Volume", "Now at " .. stdout:gsub("\n[^\n]*$", ""))
 	       end)
+	       awful.spawn("pamixer -d 5")
             end,
-            {description = "Volume -10%", group = "Volume"}
+            {description = "Volume -5%", group = "Volume"}
         ),
         awful.key(
             {modkey, "Control"},
             "k",
             function()
-	       awful.spawn("pamixer -i 10")
 	       awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout)
-						    notify("Volume", stdout:gsub("\n[^\n]*$", ""))
+						    notify("Volume", "Now at " .. stdout:gsub("\n[^\n]*$", ""))
 	       end)
+                awful.spawn("pamixer -i 5")
             end,
-            {description = "Volume +10%", group = "Volume"}
+            {description = "Volume +5%", group = "Volume"}
         ),
         awful.key(
             {modkey, "Control"},
             "l",
             function()
-	       awful.spawn("pamixer -t")
 	       awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout)
-						    notify("Volume", stdout:gsub("\n[^\n]*$", ""))
+						    if stdout == "muted" then
+						       notify("Volume", "Now <span color='" .. beautiful.negative .. "'>" .. stdout .. "</span>"))
+	       else
+						    notify("Volume", "Now at " .. stdout:gsub("\n[^\n]*$", ""))
+end
 	       end)
             end,
             {description = "Toggle mute", group = "Volume"}

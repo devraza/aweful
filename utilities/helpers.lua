@@ -2,6 +2,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local awful = require("awful")
 local naughty = require("naughty")
+local dpi = beautiful.xresources.apply_dpi
 
 function colourise(text, fg)
     if fg == "" then
@@ -41,10 +42,10 @@ function distext(text)
 end
 
 function notify(title, description)
-    return naughty.notification {
+    return naughty.notify {
         border_color = beautiful.bg_normal,
-        border_width = 10,
-        fg = text,
+        border_width = dpi(5),
+	timeout = 0.6,
         bg = beautiful.bg_normal,
         title = '<span color="' .. beautiful.tertiary .. '"><b>' .. title .. "</b></span>",
         text = description
