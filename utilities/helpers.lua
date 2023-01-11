@@ -41,10 +41,10 @@ function distext(text)
     }
 end
 
-function notify(title, description)
+function notify(title, description, outtime)
     return naughty.notify {
         border_color = beautiful.bg_normal,
-	timeout = 0.6,
+	timeout = outtime,
         bg = beautiful.bg_normal,
         title = '<span color="' .. beautiful.tertiary .. '"><b>' .. title .. "</b></span>",
         text = description

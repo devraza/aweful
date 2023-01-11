@@ -135,7 +135,7 @@ awful.keyboard.append_global_keybindings(
             function()
 	       awful.spawn("pamixer -d 10")
 	       awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout)
-						    notify("Volume", stdout:gsub("\n[^\n]*$", ""))
+						    notify("Volume", stdout:gsub("\n[^\n]*$", ""), 0.6)
 	       end)
             end,
             {description = "Volume -10%", group = "Volume"}
@@ -146,7 +146,7 @@ awful.keyboard.append_global_keybindings(
             function()
 	       awful.spawn("pamixer -i 10")
 	       awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout)
-						    notify("Volume", stdout:gsub("\n[^\n]*$", ""))
+						    notify("Volume", stdout:gsub("\n[^\n]*$", ""), 0.6)
 	       end)
             end,
             {description = "Volume +10%", group = "Volume"}
@@ -157,7 +157,7 @@ awful.keyboard.append_global_keybindings(
             function()
 	       awful.spawn("pamixer -t")
 	       awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout)
-						    notify("Volume", stdout:gsub("\n[^\n]*$", ""))
+						    notify("Volume", stdout:gsub("\n[^\n]*$", ""), 0.6)
 	       end)
             end,
             {description = "Toggle mute", group = "Volume"}
@@ -205,6 +205,52 @@ awful.keyboard.append_global_keybindings(
         )
     }
 )
+
+-- Screenshot
+awful.keyboard.append_global_keybindings(
+    {
+        awful.key(
+            {modkey, "Shift"},
+            "a",
+            function()
+	       timestamp = os.date("%d.%m.%Y-%H:%M:%S") 
+	       awful.spawn.with_shell(
+		  "scrot " .. screenshot_path ..
+		  timestamp .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
+	       )
+	       notify("Screenshot taken!", "Saved to " .. screenshot_path .. timestamp .. ".png", 1)
+            end,
+            { description = "Capture screen", group = "Screenshot" }
+        ),
+        awful.key(
+            {modkey, "Shift"},
+            "s",
+            function()
+	       timestamp = os.date("%d.%m.%Y-%H:%M:%S") 
+	       awful.spawn.with_shell(
+		  "scrot -s -f " .. screenshot_path ..
+		  timestamp .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
+	       )
+	       notify("Screenshot taken!", "Saved to " .. screenshot_path .. timestamp .. ".png", 1)
+            end,
+            { description = "Capture area", group = "Screenshot" }
+        ),
+        awful.key(
+            {modkey, "Shift"},
+            "d",
+            function()
+	       timestamp = os.date("%d.%m.%Y-%H:%M:%S") 
+	       awful.spawn.with_shell(
+		  "scrot -u " .. screenshot_path ..
+		  timestamp .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
+	       )
+	       notify("Screenshot taken!", "Saved to " .. screenshot_path .. timestamp .. ".png", 1)
+            end,
+            {description = "Capture window", group = "Screenshot"}
+        )
+    }
+)
+
 
 -- Applications
 awful.keyboard.append_global_keybindings(
