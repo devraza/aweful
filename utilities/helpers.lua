@@ -44,7 +44,6 @@ end
 function notify(title, description)
     return naughty.notify {
         border_color = beautiful.bg_normal,
-        border_width = dpi(5),
 	timeout = 0.6,
         bg = beautiful.bg_normal,
         title = '<span color="' .. beautiful.tertiary .. '"><b>' .. title .. "</b></span>",
