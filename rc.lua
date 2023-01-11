@@ -37,8 +37,6 @@ chat = terminal .. " -e tiny"
 pdf = "zathura"
 -- Screen locker
 locker = "slock"
--- Colour picker
-colour_picker = "xcolor"
 
 -- User modules
 require("utilities")
