@@ -11,16 +11,6 @@ dashboard = awful.popup {
 	    {
 	       forced_height = dpi(70),
 	       forced_width = dpi(100),
-	    widget = wibox.container.background(wibox.container.place(volume))
-	    },
-	    bg = beautiful.bg_light,
-	    clip = true,
-	    widget = wibox.container.background
-	 },
-	 {
-	    {
-	       forced_height = dpi(70),
-	       forced_width = dpi(100),
 	       widget = wibox.container.background(wibox.container.place(battery))
 	    },
 	    bg = beautiful.bg_light,
