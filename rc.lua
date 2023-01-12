@@ -24,7 +24,7 @@ editor = "emacsclient -c"
 -- Modkey. Can either be Mod4 (Super) or Mod1 (Alt)
 modkey = "Mod4"
 -- File manager, will be run directly
-file_manager = terminal .. " -e xplr"
+file_manager = terminal .. " -e ranger"
 -- Music player, will be run directly
 music_player = terminal .. " -e ncmpcpp"
 -- Web browser
