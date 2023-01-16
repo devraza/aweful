@@ -159,14 +159,14 @@ awful.keyboard.append_global_keybindings(
 	 {description = "Toggle mute", group = "Volume"}
       ),
       awful.key (
-	 { modkey, "Control" },
+	 { modkey, "Control", "Shift" },
 	 "a",
 	 function()
 	    awful.spawn.with_shell("sudo poweroff")
 	 end,
 	 { description = "Poweroff", group = "Powermenu" }),
       awful.key (
-	 { modkey, "Control" },
+	 { modkey, "Control", "Shift" },
 	 "s",
 	 function()
 	    awful.spawn.with_shell("sudo reboot")
@@ -189,6 +189,57 @@ awful.keyboard.append_global_keybindings(
 	    awful.spawn("rofi -show run")
 	 end,
 	 {description = "Run Command", group = "Rofi"}
+      ),
+
+      -- Screenshot
+      awful.key(
+	 { "Mod1", "Shift"},
+	 "h",
+	 function()
+	    awful.spawn("mpc prev")
+	 end,
+	 { description = "Previous track", group = "MPD" }
+      ),
+      awful.key(
+	 { "Mod1", "Shift"},
+	 "j",
+	 function()
+	    awful.spawn("mpc pause")
+	 end,
+	 { description = "Pause track", group = "MPD" }
+      ),
+      awful.key(
+	 { "Mod1", "Shift"},
+	 "k",
+	 function()
+	    awful.spawn("mpc play")
+	 end,
+	 { description = "Resume track", group = "MPD" }
+      ),
+      awful.key(
+	 { "Mod1", "Shift"},
+	 "l",
+	 function()
+	    awful.spawn("mpc prev")
+	 end,
+	 { description = "Next track", group = "MPD" }
+      ),
+
+     awful.key(
+	 { "Mod1", "Shift"},
+	 "u",
+	 function()
+	    awful.spawn("mpc volume -10")
+	 end,
+	 { description = "Volume -10%", group = "MPD" }
+      ),
+      awful.key(
+	 { "Mod1", "Shift"},
+	 "i",
+	 function()
+	    awful.spawn("mpc volume +10")
+	 end,
+	 { description = "Volume +10%", group = "MPD" }
       ),
 
       -- Screenshot
