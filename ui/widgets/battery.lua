@@ -26,5 +26,6 @@ battery =
             text = "Impending doom approaches!."
         }
     end,
+    notify = "off",
     batteries = {"BAT1", "BAT2"}
 }
