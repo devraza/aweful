@@ -11,3 +11,4 @@ pipewire-pulse &
 emacs --daemon &
 mpd &
 $SCRIPTPATH/monitors.sh
+xset led on &
