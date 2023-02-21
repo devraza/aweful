@@ -21,8 +21,8 @@ theme.positive = xrdb.color3
 theme.disabled = xrdb.color8
 
 -- Font and resizable font (append a size as a string)
-theme.font = "Iosevka 11.5"
-theme.font_sizeable = "Iosevka "
+theme.font = "Iosevka SS12 12"
+theme.font_sizeable = "Iosevka SS12 "
 
 -- Icon font and resizable icon font (appand a size as a string)
 theme.icon_font = "Font Awesome 6 Pro 12.5"

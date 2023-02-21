@@ -220,7 +220,7 @@ awful.keyboard.append_global_keybindings(
 	 { "Mod1", "Shift"},
 	 "l",
 	 function()
-	    awful.spawn("mpc prev")
+	    awful.spawn("mpc next")
 	 end,
 	 { description = "Next track", group = "MPD" }
       ),

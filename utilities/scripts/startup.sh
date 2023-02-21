@@ -1,14 +1,9 @@
 #!/bin/bash
 
-export SCRIPTPATH="$(
-  cd "$(dirname "$0")" || exit
-  pwd -P
-)"
-
+feh --bg-fill ~/.config/awesome/assets/wallpapers/graphite-ultrawide.png
+pkill redshift
+pkill redshift
+redshift -l 52.486244:-1.890401 &
 picom &
-pipewire &
-pipewire-pulse &
 emacs --daemon &
 mpd &
-$SCRIPTPATH/monitors.sh
-xset led on &
