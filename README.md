@@ -10,6 +10,7 @@ This repository contains my AwesomeWM configuration, made with lots of **Love**.
 - `xclip`
 - `pamixer`
 - `rofi`
+- `scrot`
 - `xrdb`
 
 > Please keep in mind that all of these are optional for the configuration to load, but necessary if you want some functionality (for example, `scrot` is required for screenshots)
