@@ -40,7 +40,7 @@ ruled.client.connect_signal('request::rules', function()
   ruled.client.append_rule {
     rule = { class = 'discord' },
     properties = {
-       screen = 1, tag = '5', switch_to_tags = true, floating = true 
+       screen = 1, tag = '4', switch_to_tags = true, floating = true 
     }
   }
   ruled.client.append_rule {
