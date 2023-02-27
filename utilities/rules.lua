@@ -38,12 +38,18 @@ ruled.client.connect_signal('request::rules', function()
     }
   }
   ruled.client.append_rule {
+    rule = { class = 'discord' },
+    properties = {
+       screen = 1, tag = '5', switch_to_tags = true, floating = true 
+    }
+  }
+  ruled.client.append_rule {
     rule = { class = 'qutebrowser' },
     properties = { screen = 1, tag = '2', switch_to_tags = true }
   }
   ruled.client.append_rule {
     rule = { class = 'zoom' },
-    properties = { screen = 1, tag = '5', switch_to_tags = true, floating = true }
+    properties = { screen = 1, tag = '6', switch_to_tags = true, floating = true }
   }
 end)
 

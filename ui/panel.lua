@@ -10,9 +10,9 @@ screen.connect_signal(
     "request::desktop_decoration",
     function(s)
         -- Each screen has its own tag table.
-        local names = {"1", "2", "3", "4", "5"}
+        local names = {"1", "2", "3", "4", "5", "6"}
         local l = awful.layout.suit
-        local layouts = {l.tile, l.tile, l.tile, l.tile, l.floating}
+        local layouts = {l.tile, l.tile, l.tile, l.tile, l.tile, l.floating}
         awful.tag(names, s, layouts)
 
         -- Prompt
