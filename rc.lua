@@ -18,7 +18,7 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "ui/theme.lua")
 -- Screenshot directory
 screenshot_path = os.getenv("HOME") .. "/Pictures/Screenshots/"
 -- Terminal emulator
-terminal = "alacritty"
+terminal = "kitty"
 -- Editor. This will be run directly
 editor = "emacsclient -c"
 -- Modkey. Can either be Mod4 (Super) or Mod1 (Alt)
