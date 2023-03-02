@@ -191,7 +191,7 @@ awful.keyboard.append_global_keybindings(
 	 {description = "Run Command", group = "Rofi"}
       ),
 
-      -- Screenshot
+      -- MPC
       awful.key(
 	 { "Mod1", "Shift"},
 	 "h",
@@ -247,12 +247,11 @@ awful.keyboard.append_global_keybindings(
 	 {modkey, "Shift"},
 	 "a",
 	 function()
-	    timestamp = os.date("%d.%m.%Y-%H:%M:%S") 
+	    timestamp = os.date("%d.%m.%Y-%H:%M:%S")
 	    awful.spawn.with_shell(
 	       "scrot " .. screenshot_path ..
 	       timestamp .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
 	    )
-	    notify("Screenshot taken!", "Saved to " .. screenshot_path .. timestamp .. ".png", 1)
 	 end,
 	 { description = "Capture screen", group = "Screenshot" }
       ),
@@ -265,7 +264,6 @@ awful.keyboard.append_global_keybindings(
 	       "scrot -s -f " .. screenshot_path ..
 	       timestamp .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
 	    )
-	    notify("Screenshot taken!", "Saved to " .. screenshot_path .. timestamp .. ".png", 1)
 	 end,
 	 { description = "Capture area", group = "Screenshot" }
       ),
@@ -278,7 +276,6 @@ awful.keyboard.append_global_keybindings(
 	       "scrot -u " .. screenshot_path ..
 	       timestamp .. ".png -e 'xclip -t image/png -selection clipboard -i $f'"
 	    )
-	    notify("Screenshot taken!", "Saved to " .. screenshot_path .. timestamp .. ".png", 1)
 	 end,
 	 {description = "Capture window", group = "Screenshot"}
       ),
