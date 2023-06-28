@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # Everything else is just a systemd service.
-picom &
-emacs --daemon &
+xrandr --output eDP-1 --off
+emacs --daemon

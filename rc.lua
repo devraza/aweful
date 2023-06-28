@@ -18,7 +18,7 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "ui/theme.lua")
 -- Screenshot directory
 screenshot_path = os.getenv("HOME") .. "/Pictures/Screenshots/"
 -- Terminal emulator
-terminal = "kitty"
+terminal = "alacritty"
 -- Editor. This will be run directly
 editor = "emacsclient -c"
 -- Modkey. Can either be Mod4 (Super) or Mod1 (Alt)
@@ -32,7 +32,7 @@ browser = "qutebrowser"
 -- System monitor
 monitor = terminal .. " -e btm"
 -- Chat client
-chat = terminal .. " -e tiny"
+chat = "discord-canary --no-sandbox --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
 -- PDF Viewer
 pdf = "zathura"
 -- Screen locker

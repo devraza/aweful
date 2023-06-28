@@ -178,7 +178,7 @@ awful.keyboard.append_global_keybindings(
 	 {modkey},
 	 "space",
 	 function()
-	    awful.spawn("rofi -show drun")
+	    awful.spawn("rofi -show drun -dpi 96")
 	 end,
 	 {description = "Launch Application", group = "Rofi"}
       ),
@@ -186,7 +186,7 @@ awful.keyboard.append_global_keybindings(
 	 {modkey, "Shift"},
 	 "space",
 	 function()
-	    awful.spawn("rofi -show run")
+	    awful.spawn("rofi -show run -dpi 96")
 	 end,
 	 {description = "Run Command", group = "Rofi"}
       ),
